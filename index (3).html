@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Life Studio — Digital Products for Intentional Living</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+<style>
+:root{--cream:#FDF8F2;--sage:#B5C9B1;--sage-dark:#7A9E76;--blush:#E8C4B0;--warm:#6B4F3A;--deep:#2C2C2C;--gold:#D4A843;--white:#FEFCF9;--muted:#8A7B70;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--deep);line-height:1.6;}
+nav{background:var(--white);border-bottom:1px solid #E8E0D8;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.04);}
+.logo{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--warm);text-decoration:none;}
+.logo span{color:var(--sage-dark);font-style:italic;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.9rem;font-weight:500;margin-left:1.5rem;transition:color 0.2s;}
+.nav-links a:hover{color:var(--warm);}
+.nav-cta{background:var(--warm)!important;color:white!important;padding:0.5rem 1.2rem;border-radius:50px;}
+.hero{background:linear-gradient(135deg,#FDF8F2 0%,#F5EDE4 50%,#EBE0D5 100%);padding:5rem 2rem 4rem;text-align:center;}
+.eyebrow{display:inline-block;background:var(--sage);color:var(--warm);font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:0.4rem 1rem;border-radius:50px;margin-bottom:1.5rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.2;color:var(--warm);max-width:750px;margin:0 auto 1.5rem;}
+.hero h1 em{color:var(--sage-dark);font-style:italic;}
+.hero p{font-size:1.1rem;color:var(--muted);max-width:550px;margin:0 auto 2.5rem;font-weight:300;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--warm);color:white;padding:0.85rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;transition:transform 0.2s,box-shadow 0.2s;display:inline-block;font-size:0.95rem;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(107,79,58,0.3);}
+.btn-secondary{background:transparent;color:var(--warm);padding:0.85rem 2rem;border-radius:50px;border:2px solid var(--warm);text-decoration:none;font-weight:500;transition:all 0.2s;display:inline-block;font-size:0.95rem;}
+.btn-secondary:hover{background:var(--warm);color:white;}
+.badges{margin-top:2.5rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;font-size:0.8rem;color:var(--muted);}
+.gift-banner{background:var(--sage);padding:2.5rem 2rem;text-align:center;}
+.gift-banner h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--warm);margin-bottom:0.5rem;}
+.gift-banner p{color:var(--warm);opacity:0.85;margin-bottom:1.2rem;font-size:0.95rem;}
+.results{padding:5rem 2rem;max-width:1100px;margin:0 auto;text-align:center;}
+.section-label{font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:0.5rem;display:block;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--warm);margin-bottom:1rem;}
+.section-sub{color:var(--muted);max-width:500px;margin:0 auto 3rem;font-weight:300;font-size:0.95rem;}
+.results-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;}
+.result-card{background:white;border-radius:16px;padding:2rem 1.5rem;border:1px solid #EDE5DC;transition:transform 0.2s,box-shadow 0.2s;}
+.result-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(107,79,58,0.1);}
+.result-card .icon{font-size:2rem;margin-bottom:1rem;display:block;}
+.result-card h4{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--warm);margin-bottom:0.5rem;}
+.result-card p{color:var(--muted);font-size:0.88rem;line-height:1.6;}
+.products{background:#F5EDE4;padding:5rem 2rem;}
+.products-inner{max-width:1100px;margin:0 auto;}
+.products-header{text-align:center;margin-bottom:3rem;}
+.bundle{background:var(--warm);border-radius:20px;padding:2.5rem;color:white;margin-bottom:2.5rem;position:relative;overflow:hidden;}
+.bundle-badge{display:inline-block;background:var(--gold);color:white;font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.8rem;border-radius:50px;margin-bottom:1rem;}
+.bundle h2{font-family:'Playfair Display',serif;font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:0.8rem;line-height:1.3;}
+.bundle h2 em{color:var(--gold);font-style:italic;}
+.bundle-sub{opacity:0.8;margin-bottom:1.2rem;font-size:0.95rem;font-weight:300;}
+.bundle-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem;}
+.bundle-tags span{background:rgba(255,255,255,0.12);padding:0.3rem 0.8rem;border-radius:50px;font-size:0.8rem;}
+.bundle-price-row{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;}
+.bundle-price{font-family:'Playfair Display',serif;font-size:3rem;font-weight:600;}
+.bundle-compare{font-size:0.85rem;opacity:0.75;line-height:1.8;}
+.bundle-compare s{display:block;font-size:1rem;}
+.bundle-btn{display:inline-block;background:var(--gold);color:white;padding:0.9rem 2rem;border-radius:50px;text-decoration:none;font-weight:500;transition:transform 0.2s,box-shadow 0.2s;font-size:0.95rem;}
+.bundle-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;}
+.product-card{background:white;border-radius:16px;padding:1.5rem;border:1px solid #EDE5DC;display:flex;flex-direction:column;transition:transform 0.2s,box-shadow 0.2s;position:relative;}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px rgba(107,79,58,0.12);}
+.product-card img{width:100%;border-radius:10px;margin-bottom:1rem;object-fit:cover;aspect-ratio:1/1;}
+.product-tag{font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:0.4rem;}
+.product-card h3{font-family:'Playfair Display',serif;font-size:1rem;color:var(--warm);margin-bottom:0.5rem;line-height:1.3;}
+.product-card p{color:var(--muted);font-size:0.85rem;line-height:1.7;flex-grow:1;margin-bottom:1rem;font-weight:300;}
+.product-footer{display:flex;justify-content:space-between;align-items:flex-end;margin-top:auto;}
+.product-price{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--warm);font-weight:600;line-height:1;}
+.price-was{font-size:0.75rem;color:var(--muted);margin-top:2px;}
+.price-free{color:var(--sage-dark)!important;}
+.product-btn{background:var(--cream);color:var(--warm);border:1.5px solid var(--warm);padding:0.5rem 1.1rem;border-radius:50px;text-decoration:none;font-size:0.82rem;font-weight:500;transition:all 0.2s;white-space:nowrap;}
+.product-btn:hover{background:var(--warm);color:white;}
+.badge{position:absolute;top:-10px;right:16px;font-size:0.65rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.8rem;border-radius:50px;color:white;}
+.badge-gold{background:var(--gold);}
+.badge-sage{background:var(--sage-dark);}
+.about{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.photo-wrap{position:relative;}
+.about-photo{width:100%;max-width:400px;border-radius:20px;object-fit:cover;aspect-ratio:3/4;display:block;}
+.photo-accent{position:absolute;bottom:-16px;left:-16px;width:120px;height:120px;background:var(--sage);border-radius:16px;z-index:-1;}
+.photo-accent2{position:absolute;top:-12px;right:-12px;width:80px;height:80px;background:var(--blush);border-radius:12px;z-index:-1;}
+.about-text .section-label{text-align:left;}
+.about-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);color:var(--warm);line-height:1.3;margin-bottom:1.2rem;}
+.about-text h2 em{color:var(--sage-dark);font-style:italic;}
+.about-text p{color:var(--muted);margin-bottom:1rem;font-weight:300;font-size:1rem;line-height:1.8;}
+.about-text p strong{color:var(--warm);font-weight:500;}
+.testimonials{background:var(--warm);padding:5rem 2rem;text-align:center;}
+.testimonials .section-label{color:var(--sage);}
+.testimonials .section-title{color:white;}
+.testi-sub{color:rgba(255,255,255,0.6);margin-bottom:2.5rem;font-weight:300;font-size:0.95rem;}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;max-width:1000px;margin:0 auto;}
+.testi-card{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:2rem;text-align:left;}
+.stars{color:var(--gold);font-size:0.9rem;margin-bottom:0.8rem;}
+.testi-card p{color:rgba(255,255,255,0.85);font-size:0.9rem;line-height:1.7;margin-bottom:1rem;font-style:italic;font-weight:300;}
+.testi-author{display:flex;align-items:center;gap:0.8rem;}
+.avatar{width:36px;height:36px;border-radius:50%;background:var(--sage);display:flex;align-items:center;justify-content:center;font-weight:500;font-size:0.85rem;color:var(--warm);flex-shrink:0;}
+.author-name{color:white;font-size:0.85rem;font-weight:500;}
+.author-role{color:rgba(255,255,255,0.5);font-size:0.75rem;}
+.testi-result{display:inline-block;margin-top:0.8rem;background:rgba(181,201,177,0.2);color:var(--sage);font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.7rem;border-radius:50px;}
+.email-section{padding:5rem 2rem;text-align:center;background:var(--cream);}
+.email-box{background:white;border-radius:20px;padding:3rem 2rem;max-width:580px;margin:0 auto;border:1px solid #EDE5DC;box-shadow:0 4px 30px rgba(107,79,58,0.06);}
+#mc_embed_signup{background:transparent!important;font-family:'DM Sans',sans-serif!important;width:100%!important;}
+#mc_embed_signup h2{display:none!important;}
+#mc_embed_signup .indicates-required{display:none!important;}
+#mc_embed_signup .mc-field-group label{color:var(--muted)!important;font-size:0.85rem!important;font-weight:500!important;display:block;margin-bottom:0.4rem;}
+#mc_embed_signup .mc-field-group input.email{border:1.5px solid #EDE5DC!important;border-radius:50px!important;padding:0.75rem 1.4rem!important;font-size:0.95rem!important;width:100%!important;font-family:'DM Sans',sans-serif!important;background:#FEFCF9!important;outline:none!important;box-sizing:border-box!important;}
+#mc_embed_signup #mc-embedded-subscribe{background:var(--warm)!important;color:white!important;border:none!important;border-radius:50px!important;padding:0.85rem 2rem!important;font-size:0.95rem!important;font-weight:500!important;font-family:'DM Sans',sans-serif!important;cursor:pointer!important;width:100%!important;margin-top:0.8rem!important;}
+#mc_embed_signup .refferal_badge{display:none!important;}
+#mc_embed_signup .foot{flex-direction:column!important;}
+.email-note{font-size:0.75rem;color:var(--muted);margin-top:0.8rem;}
+.faq{padding:5rem 2rem;max-width:720px;margin:0 auto;}
+.faq-header{text-align:center;margin-bottom:2.5rem;}
+.faq-item{border-bottom:1px solid #EDE5DC;padding:1.3rem 0;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-weight:500;color:var(--deep);font-size:0.95rem;gap:1rem;}
+.faq-q:hover{color:var(--warm);}
+.faq-icon{color:var(--sage-dark);font-size:1.2rem;transition:transform 0.3s;flex-shrink:0;}
+.faq-item.open .faq-icon{transform:rotate(45deg);}
+.faq-a{color:var(--muted);font-size:0.9rem;line-height:1.7;max-height:0;overflow:hidden;transition:max-height 0.3s ease,padding 0.3s;font-weight:300;}
+.faq-item.open .faq-a{max-height:300px;padding-top:0.8rem;}
+footer{background:var(--deep);color:rgba(255,255,255,0.6);padding:3rem 2rem;text-align:center;}
+footer .logo{color:#FDF8F2;display:block;margin-bottom:1rem;font-family:'Playfair Display',serif;font-size:1.4rem;text-decoration:none;}
+footer p{font-size:0.85rem;margin-bottom:0.4rem;}
+footer a{color:var(--sage);text-decoration:none;font-size:0.85rem;}
+.footer-links{margin-top:1.2rem;display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;}
+.trust-bar{display:flex;justify-content:center;gap:1.5rem;flex-wrap:wrap;margin-top:1.5rem;font-size:0.8rem;color:rgba(255,255,255,0.4);}
+.sticky-gift{position:fixed;bottom:20px;right:20px;background:var(--warm);color:white;padding:0.7rem 1.2rem;border-radius:50px;text-decoration:none;font-size:0.85rem;font-weight:500;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:999;transition:transform 0.2s;}
+.sticky-gift:hover{transform:translateY(-2px);}
+@media(max-width:768px){.about-inner{grid-template-columns:1fr;gap:2.5rem;}.about-photo{max-width:280px;margin:0 auto;}.nav-links{display:none;}.bundle-price{font-size:2.2rem;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Soft Life <span>Studio</span></a>
+  <div class="nav-links">
+    <a href="#products">Shop</a>
+    <a href="#about">About</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="https://softlifestudio123.gumroad.com/l/hjbjq" class="nav-cta">Free Gift 🎁</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">🌿 Digital Products for Intentional Living</div>
+  <h1>You Don't Need to Do More.<br><em>You Need a Better System.</em></h1>
+  <p>Beautifully designed digital tools to reset your mind, your money, your home — and build a life that finally feels soft, clear, and yours.</p>
+  <div class="hero-btns">
+    <a href="#products" class="btn-primary">Shop All Products →</a>
+    <a href="https://softlifestudio123.gumroad.com/l/hjbjq" class="btn-secondary">Get Free Gift 🎁</a>
+  </div>
+  <div class="badges">
+    <span>⚡ Instant Download</span><span>📱 Works on Any Device</span><span>🔒 Secure Checkout</span><span>💛 Happiness Guaranteed</span>
+  </div>
+</section>
+
+<section class="gift-banner">
+  <h3>🎁 Not Sure Where to Start? Start Here — For Free.</h3>
+  <p>Download the free Brain Dump Worksheet and clear your mind instantly. No catch. Just clarity.</p>
+  <a href="https://softlifestudio123.gumroad.com/l/hjbjq" class="btn-primary">Download Free Gift →</a>
+</section>
+
+<section class="results">
+  <span class="section-label">What Changes</span>
+  <h2 class="section-title">Real Shifts. Real Results.</h2>
+  <p class="section-sub">Designed to create tangible changes in how you feel, think, and live — starting day one.</p>
+  <div class="results-grid">
+    <div class="result-card"><span class="icon">🧠</span><h4>Mental Clarity</h4><p>Daily prompts bring you back to what actually matters — your intentions, your peace, your purpose.</p></div>
+    <div class="result-card"><span class="icon">💸</span><h4>Financial Peace</h4><p>See your money clearly for the first time. Replace anxiety with confidence using a system that works.</p></div>
+    <div class="result-card"><span class="icon">🌱</span><h4>A Thriving Home</h4><p>Turn your environment into a living, breathing sanctuary that feels completely like you.</p></div>
+    <div class="result-card"><span class="icon">✨</span><h4>A Life With Vision</h4><p>Keep your dream life emotionally close. See your goals every single day and believe they're possible.</p></div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="products-inner">
+    <div class="products-header">
+      <span class="section-label">The Collection</span>
+      <h2 class="section-title">Everything You Need to Reset</h2>
+      <p class="section-sub" style="max-width:480px;margin:0 auto 0;">Each product solves one real problem in your life — beautifully, instantly, and affordably.</p>
+    </div>
+
+    <div class="bundle">
+      <div class="bundle-badge">⭐ Best Value — Most Popular</div>
+      <h2>The Ultimate Soft Life <em>Master Suite</em></h2>
+      <p class="bundle-sub">The complete system for women ready to reset their mind, money, home, and vision — all at once.</p>
+      <div class="bundle-tags">
+        <span>📓 Soft Reset Journal</span><span>💰 Budget Tracker</span><span>🌿 Plant Care Kit</span><span>✨ Vision Board Kit</span><span>🎁 Brain Dump Worksheet</span>
+      </div>
+      <div class="bundle-price-row">
+        <div class="bundle-price">$67</div>
+        <div class="bundle-compare"><s>Was $95.90</s>You save $28.90 today ✨</div>
+      </div>
+      <a href="https://softlifestudio123.gumroad.com/l/jzuaw" class="bundle-btn">Yes, I Want Everything — $67 →</a>
+    </div>
+
+    <div class="product-grid">
+
+      <!-- JOURNAL = Soft_Resset_Journal image -->
+      <div class="product-card">
+        <div class="badge badge-gold">⭐ Bestseller</div>
+        <img src="https://kimi-web-img.moonshot.cn/img/i.etsystatic.com/5f2a7a0c7b76b0617d8a28ecee19817f9b659ece.jpg" alt="Soft Life Reset Journal">
+        <div class="product-tag">Mindset Reset</div>
+        <h3>Soft Reset Journal — 30-Day Discipline Journal</h3>
+        <p>One gentle page a day. Set your intentions, track your mood, practice gratitude, and reflect weekly. Structure without pressure — your reset begins here.</p>
+        <div class="product-footer">
+          <div><div class="product-price">$15</div></div>
+          <a href="https://softlifestudio123.gumroad.com/l/joobcp" class="product-btn">Start My Reset →</a>
+        </div>
+      </div>
+
+      <!-- BUDGET TRACKER = FININCIAL_2png image -->
+      <div class="product-card">
+        <img src="https://kimi-web-img.moonshot.cn/img/images.squarespace-cdn.com/bf26244dccb9d85ca6b7064bad81e96667407ffb" alt="Financial Budget Tracker">
+        <div class="product-tag">Money & Finance</div>
+        <h3>Automated Wealth & Budget Tracker</h3>
+        <p>Annual overviews, debt snowball calculator, savings goals and a 52-week challenge. Take back control of your money — without the overwhelm.</p>
+        <div class="product-footer">
+          <div><div class="product-price">$15</div></div>
+          <a href="https://softlifestudio123.gumroad.com/l/mizlq" class="product-btn">Fix My Finances →</a>
+        </div>
+      </div>
+
+      <!-- PLANT CARE = FININCIAL1 image -->
+      <div class="product-card">
+        <img src="https://kimi-web-img.moonshot.cn/img/i.etsystatic.com/caa46b89ca16bbb382299ba22a1b552aecc8e2de.jpg" alt="Plant Care Kit">
+        <div class="product-tag">Home & Space</div>
+        <h3>Indoor Plant Care Kit — 30-Day Care Blueprint</h3>
+        <p>Watering schedules, seasonal guides, diagnostic trackers and repotting checklists. Transform your space into a thriving, lush sanctuary.</p>
+        <div class="product-footer">
+          <div><div class="product-price">$15</div></div>
+          <a href="https://softlifestudio123.gumroad.com/l/wbikp" class="product-btn">Save My Plants →</a>
+        </div>
+      </div>
+
+      <!-- VISION BOARD = FININCIA4 image -->
+      <div class="product-card">
+        <img src="https://kimi-web-img.moonshot.cn/img/i.etsystatic.com/49ff13a74a0a3b617cb88278b3135920fcd4a73a.jpg" alt="Vision Board Kit">
+        <div class="product-tag">Vision & Goals</div>
+        <h3>Aesthetic Digital Vision Board & Wallpaper Kit</h3>
+        <p>Editable Canva templates, affirmation phone wallpapers, and goal-setting pages. Keep your dream life visible, present, and emotionally real every single day.</p>
+        <div class="product-footer">
+          <div><div class="product-price">$15</div></div>
+          <a href="https://softlifestudio123.gumroad.com/l/kcxybu" class="product-btn">Build My Vision →</a>
+        </div>
+      </div>
+
+      <!-- EBOOK = the_complete_guide image -->
+      <div class="product-card">
+        <div class="badge badge-sage">📚 Featured</div>
+        <img src="https://kimi-web-img.moonshot.cn/img/images.printkk.com/0d99b5ad4deb4e118540b22d36017e5ecbd9af04.png" alt="Complete Guide to Digital Products Ebook">
+        <div class="product-tag">Complete Masterguide</div>
+        <h3>The Complete Guide to Creating & Selling Digital Products From Zero</h3>
+        <p>An elegantly crafted, step-by-step masterguide for the woman ready to turn her knowledge into income. From your very first idea to your very first sale — every chapter written to empower, inspire, and move you forward with confidence and clarity.</p>
+        <div class="product-footer">
+          <div>
+            <div class="product-price">$65</div>
+            <div class="price-was"><s>$85.90</s> — Save $20!</div>
+          </div>
+          <a href="https://softlifestudio123.gumroad.com/l/ntxxur" class="product-btn">Get the Guide →</a>
+        </div>
+      </div>
+
+      <!-- FREEBIE = FININCIAL_3png (Brain Dump) image -->
+      <div class="product-card">
+        <img src="https://kimi-web-img.moonshot.cn/img/i.etsystatic.com/7de1767ab0ce6d643960dbd23571b330338f496a.jpg" alt="Free Brain Dump Worksheet">
+        <div class="product-tag">Free Gift 🎁</div>
+        <h3>Free Brain Dump Worksheet — Clear Your Mind Instantly</h3>
+        <p>Feeling overwhelmed and scattered? Pour everything out — home, work, relationships, passions — so you can finally breathe, think clearly, and start fresh with a calm and focused mind.</p>
+        <div class="product-footer">
+          <div><div class="product-price price-free">Free</div></div>
+          <a href="https://softlifestudio123.gumroad.com/l/hjbjq" class="product-btn">Claim My Gift →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="photo-wrap">
+      <img src="https://kimi-web-img.moonshot.cn/img/img.magnific.com/ae2b0a426e429dcb86ff6a70d802867c91e32d85.jpg" alt="Roxanne, founder of Soft Life Studio" class="about-photo">
+      <div class="photo-accent"></div>
+      <div class="photo-accent2"></div>
+    </div>
+    <div class="about-text">
+      <span class="section-label">The Woman Behind the Brand</span>
+      <h2>Hi, I'm Roxanne.<br><em>I built this for myself first.</em></h2>
+      <p>A few years ago, I was exhausted, overwhelmed, and completely burned out. My mind was scattered. My money felt chaotic. My home didn't feel like a sanctuary. I was doing <strong>so much</strong> — and none of it felt soft.</p>
+      <p>So I started building tools to help myself get clear. A journal. A budget tracker. Systems that actually worked with my life instead of against it. Slowly, everything shifted.</p>
+      <p>Soft Life Studio is what I wish had existed for me back then. <strong>Every single product here is something I created and used myself</strong> — designed to help you feel more intentional, more peaceful, and more like yourself.</p>
+      <p>Welcome to the soft life. You deserve it. 🌿</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <span class="section-label">Real Stories</span>
+  <h2 class="section-title">Women Who Reset Their Lives</h2>
+  <p class="testi-sub">Real words from real customers who chose to start over — softly.</p>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Downloaded the journal on a Sunday. By Wednesday I felt like a completely different person. The prompts made me stop and actually think for the first time in months."</p>
+      <div class="testi-author"><div class="avatar">A</div><div><div class="author-name">Amara T.</div><div class="author-role">Digital Creator</div></div></div>
+      <div class="testi-result">✦ Clarity in 3 days</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"The budget tracker completely changed my relationship with money. No more financial anxiety — I'm actually saving consistently for the first time in my life."</p>
+      <div class="testi-author"><div class="avatar">K</div><div><div class="author-name">Kezia M.</div><div class="author-role">Small Business Owner</div></div></div>
+      <div class="testi-result">✦ Financial anxiety gone</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Bought the full suite and used everything. My home feels alive, my goals feel real, and my mornings actually feel soft now. Every penny was worth it."</p>
+      <div class="testi-author"><div class="avatar">S</div><div><div class="author-name">Simone R.</div><div class="author-role">Wellness Coach</div></div></div>
+      <div class="testi-result">✦ Full life transformation</div>
+    </div>
+  </div>
+</section>
+
+<section class="email-section">
+  <div class="email-box">
+    <span class="section-label">Join the Community</span>
+    <h2 class="section-title" style="font-size:1.8rem;margin-bottom:0.5rem;">Get Your Free Gift<br>Delivered Instantly 🌿</h2>
+    <p style="color:var(--muted);margin-bottom:1.5rem;font-size:0.95rem;font-weight:300;">Join the Soft Life Studio community and get your free Brain Dump Worksheet plus weekly reset tips and exclusive discounts.</p>
+    <div id="mc_embed_signup">
+      <form action="https://app.us15.list-manage.com/subscribe/post?u=e87107c32e4eded22d262e5d6&amp;id=4ab04450e0&amp;f_id=00b603e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+        <div id="mc_embed_signup_scroll">
+          <div class="mc-field-group">
+            <label for="mce-EMAIL">Your email address</label>
+            <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="you@example.com" value="">
+          </div>
+          <div id="mce-responses" class="clear foot">
+            <div class="response" id="mce-error-response" style="display:none"></div>
+            <div class="response" id="mce-success-response" style="display:none"></div>
+          </div>
+          <div aria-hidden="true" style="position:absolute;left:-5000px;">
+            <input type="text" name="b_e87107c32e4eded22d262e5d6_4ab04450e0" tabindex="-1" value="">
+          </div>
+          <div class="optionalParent"><div class="clear foot">
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Send My Free Gift 🌿">
+          </div></div>
+        </div>
+      </form>
+    </div>
+    <p class="email-note">🔒 No spam, ever. Unsubscribe any time.</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="faq-header">
+    <span class="section-label">Got Questions?</span>
+    <h2 class="section-title">Everything You Need to Know</h2>
+  </div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What do I get when I buy? <span class="faq-icon">+</span></div><div class="faq-a">You get an instant digital download straight to your device. No waiting, no shipping. The moment you pay, your product is ready — use it on your phone, iPad, laptop, or print it at home.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Do I need special apps or software? <span class="faq-icon">+</span></div><div class="faq-a">No special apps needed. All products are PDF files that open on any device. The Canva templates open in the free version of Canva. Nothing extra to buy.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">I've never bought a digital product. Is this easy? <span class="faq-icon">+</span></div><div class="faq-a">Very simple. Click the button, pay securely through Gumroad, and immediately receive a download link by email. If you ever have trouble, message us and we'll help you right away.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Can I print the journal and planners? <span class="faq-icon">+</span></div><div class="faq-a">Absolutely. All PDFs are designed to look beautiful printed at home or at a print shop. You can also use them digitally on your iPad with GoodNotes or Notability.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is your refund policy? <span class="faq-icon">+</span></div><div class="faq-a">Because these are instant digital downloads, all sales are final. However, if you have any issue accessing your product, please contact us and we will make it right. Your satisfaction matters deeply to us.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is the $67 bundle really worth it? <span class="faq-icon">+</span></div><div class="faq-a">Absolutely. The bundle includes all 4 products covering your mindset, money, home, and vision — plus the Brain Dump worksheet. Sold separately they total $95.90, so you save $28.90 today.</div></div>
+</section>
+
+<footer>
+  <a href="#" class="logo">Soft Life <span style="color:var(--sage);font-style:italic;">Studio</span></a>
+  <p>Digital products designed for women who are ready to live intentionally.</p>
+  <p style="font-size:0.8rem;margin-top:0.3rem;">Instant download · No physical product · For personal use only</p>
+  <div class="footer-links">
+    <a href="https://softlifestudio123.gumroad.com">Visit Full Shop on Gumroad →</a>
+    <a href="https://softlifestudio123.gumroad.com/l/hjbjq">Free Brain Dump 🎁</a>
+  </div>
+  <div class="trust-bar">
+    <span>🔒 Secure Checkout</span><span>⚡ Instant Download</span><span>💛 Happiness Guaranteed</span><span>📱 Any Device</span>
+  </div>
+  <p style="margin-top:1.5rem;font-size:0.75rem;">© 2026 Soft Life Studio. All rights reserved.</p>
+</footer>
+
+<a href="https://softlifestudio123.gumroad.com/l/hjbjq" class="sticky-gift">🎁 Free Brain Dump</a>
+
+<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+<script type="text/javascript">(function($){window.fnames=new Array();window.ftypes=new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj=jQuery.noConflict(true);</script>
+<script>function toggleFaq(el){el.parentElement.classList.toggle('open');}</script>
+</body>
+</html>
